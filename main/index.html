@@ -1,29 +1,24 @@
 <html>
+  <head>
+    <title>Snake</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<head>
-	<title>Snake</title>
-	<meta charset="UTF-8" />
-	<style>
-		#gameScreen {
-			border: 1px solid black;
-		}
-		* {
-        padding: 0;
-        margin: 0;
-      }
-      canvas {
-        background: #eee;
-        display: block;
-        margin: 0 auto;
-      }
-	</style>
-</head>
-
-<body>	
-
-	<canvas id="gameScreen" width="600" height="600"></canvas>
-
-	<script type="module" src="src/index.js"></script>
-</body>
-
+  <body>
+    <canvas id="gameScreen" width="600" height="600"></canvas>
+    <div
+      id="tryAgain"
+      class="snake-try-again-dialog hidden"
+      >
+      <div>
+        <p>Game over</p>
+        <p>Score: <span id="score"></span></p>
+        <p>Highscore: <span id="highscore"></span></p>
+        <button id="playAgain">Play Again?</button>
+      </div>
+    </div>
+    <div id = "overlay" class="overlay hidden"></div>
+    <script type="module" src="src/index.js"></script>
+  </body>
 </html>
