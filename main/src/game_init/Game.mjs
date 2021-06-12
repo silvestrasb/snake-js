@@ -79,11 +79,11 @@ export default class Game {
 
   /* DRAW ALL BLOCKS draw() */
   draw(ctx) {
-    this.drawScore(ctx);
     this.apple.draw(ctx, this.grid.size);
     this.snake.snakeBlocks.forEach((block) => {
       block.draw(ctx, this.grid.size);
     });
+    this.drawScore(ctx);
   }
 
   /* UPDATES THE GAME'S OBJECTS */

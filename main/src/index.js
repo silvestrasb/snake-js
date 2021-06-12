@@ -37,7 +37,7 @@ function gameLoop() {
   if (game.gameOver()) {
     gameOver();
   }
-  game.draw(ctx);
   game.update();
+  game.draw(ctx);
 }
 setInterval(gameLoop, 100);
