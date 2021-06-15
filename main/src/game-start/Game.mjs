@@ -1,17 +1,17 @@
-import Apple from "../blocks/Apple.mjs";
-import GridPosition from "../positioning/GridPosition.mjs";
-import SnakeBlock from "../blocks/SnakeBlock.mjs";
-import DynamicSnake from "../game_logic/DynamicSnake.mjs";
-import Grid from "../positioning/Grid.mjs";
-import CollisionDetection from "../colision_logic/CollisionDetection.mjs";
-import UserInputs from "../controls/UserInputs.mjs";
+import Apple from "../entity/Apple.mjs";
+import GridPosition from "../position/GridPosition.mjs";
+import SnakeBlock from "../block/SnakeBlock.mjs";
+import Snake from "../entity/Snake.mjs";
+import Grid from "../position/Grid.mjs";
+import CollisionDetection from "../colision-detection/CollisionDetection.mjs";
+import UserInputs from "../control/UserInputs.mjs";
 
 export default class Game {
   constructor(GAME_HEIGHT, GAME_WIDTH) {
     this.GAME_HEIGHT = GAME_HEIGHT;
     this.GAME_WIDTH = GAME_WIDTH;
     this.grid = new Grid(this.GAME_WIDTH, this.GAME_HEIGHT, 30);
-    this.snake = new DynamicSnake(this.grid, "D", [
+    this.snake = new Snake(this.grid, "D", [
       new SnakeBlock("#ffffff", this.grid.size, new GridPosition(6, 9)),
       new SnakeBlock("#90ee90", this.grid.size, new GridPosition(5, 9)),
       new SnakeBlock("#90ee90", this.grid.size, new GridPosition(4, 9)),
@@ -77,7 +77,7 @@ export default class Game {
     }
   }
 
-  /* DRAW ALL BLOCKS draw() */
+  /* DRAW ALL BLOCKS */
   draw(ctx) {
     this.apple.draw(ctx, this.grid.size);
     this.snake.snakeBlocks.forEach((block) => {
@@ -86,7 +86,7 @@ export default class Game {
     this.drawScore(ctx);
   }
 
-  /* UPDATES THE GAME'S OBJECTS */
+  /* UPDATE GAME OBJECTS */
   update() {
     if (!this.ui.pause && !this.gameOver()) {
       this.snake.direction = CollisionDetection.moveInTheOppositeDirection(
@@ -100,7 +100,7 @@ export default class Game {
 
   /* RESTART THE GAME */
   restart() {
-    this.snake = new DynamicSnake(this.grid, "D", [
+    this.snake = new Snake(this.grid, "D", [
       new SnakeBlock("#ffffff", this.grid.size, new GridPosition(6, 9)),
       new SnakeBlock("#90ee90", this.grid.size, new GridPosition(5, 9)),
       new SnakeBlock("#90ee90", this.grid.size, new GridPosition(4, 9)),

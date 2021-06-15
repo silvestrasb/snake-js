@@ -1,5 +1,5 @@
-import Block from "./Block.mjs";
-import GridPosition from "../positioning/GridPosition.mjs";
+import Block from "../block/Block.mjs";
+import GridPosition from "../position/GridPosition.mjs";
 
 export default class Apple extends Block {
   constructor(color, size, gridPosition) {

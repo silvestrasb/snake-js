@@ -1,4 +1,4 @@
-import Grid from "/src/positioning/Grid.mjs";
+import Grid from "/src/position/Grid.mjs";
 
 export default class Block {
   /**

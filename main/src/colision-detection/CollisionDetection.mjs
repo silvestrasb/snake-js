@@ -1,4 +1,4 @@
-import Grid from "/src/positioning/Grid.mjs";
+import Grid from "../position/Grid.mjs";
 export default class CollisionDetection {
 
   static moveInTheOppositeDirection(lastDirection, currentDirection){

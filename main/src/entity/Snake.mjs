@@ -1,7 +1,6 @@
-import GridPosition from "/src/positioning/GridPosition.mjs";
-import SnakeBlock from "/src/blocks/SnakeBlock.mjs";
+import SnakeBlock from "../block/SnakeBlock.mjs";
 
-export default class DynamicSnake {
+export default class Snake {
   /**
    * @param direction{
    * "U" - UP,
@@ -46,16 +45,6 @@ export default class DynamicSnake {
     this.snakeBlocks.push(tailBlock);
   }
 
-  moveDown() {
-    const previousBlockPosition = this.snakeBlocks[0].gridPosition;
-
-    this.head.moveDown();
-
-    this._shiftByOne(previousBlockPosition);
-
-    this.direction = "D";
-  }
-
   _shiftByOne(previousBlockPosition) {
     this.lastDirection = this.direction;
     for (let i = 1; i < this.snakeBlocks.length; i++) {
@@ -65,6 +54,16 @@ export default class DynamicSnake {
     }
   }
 
+  moveDown() {
+    const previousBlockPosition = this.snakeBlocks[0].gridPosition;
+
+    this.head.moveDown();
+
+    this._shiftByOne(previousBlockPosition);
+
+    this.direction = "D";
+  }
+  
   moveUp() {
     const previousBlockPosition = this.snakeBlocks[0].gridPosition;
 
