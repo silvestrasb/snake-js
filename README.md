@@ -1,6 +1,9 @@
 # snake-js
 <i>2D snake game build on vanilla JavaScript.</i>
 
+
+<b>This version works without node.js.</b>
+
 <b>Controls:</B>
 <b>
 * Up Arrow - Move up.
