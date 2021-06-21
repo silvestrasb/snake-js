@@ -1,5 +1,3 @@
-// import Game from "./game-start/Game.mjs";
-
 /* NOTE: position directory */
 
 class Grid {
