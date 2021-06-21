@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Snake</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <canvas id="gameScreen" width="600" height="600"></canvas>
+    <div
+      id="tryAgain"
+      class="snake-try-again-dialog hidden"
+      >
+      <div>
+        <p>Game over</p>
+        <p>Score: <span id="score"></span></p>
+        <p>Highscore: <span id="highscore"></span></p>
+        <button id="playAgain">Play Again?</button>
+      </div>
+    </div>
+    <div id = "overlay" class="overlay hidden"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
